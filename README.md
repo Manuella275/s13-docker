@@ -51,3 +51,5 @@ Use `docker volume rm s13-training-camps-data` only when you intentionally want 
 ## CI/CD
 
 `.github/workflows/docker-build.yml` builds and pushes the image to Docker Hub on every branch push using GitHub's hosted runner, then runs a temporary smoke-test container. The container only runs for the duration of the CI job; this is not a persistent deployment. Add a Docker Hub access token with write permission as the `DOCKERHUB_TOKEN` Actions repository secret. The Docker Hub repository `devopseasylearning/s13-training-camps` must exist and allow pushes.
+
+The workflow runs after commits are pushed to GitHub; local commits do not trigger it.
